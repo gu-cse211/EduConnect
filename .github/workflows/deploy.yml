@@ -22,7 +22,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./src # Deploy only the src folder
+          publish_dir: ./223106831_WebProject
           publish_branch: gh-pages
           keep_files: false
           exclude: |
