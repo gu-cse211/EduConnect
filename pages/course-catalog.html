@@ -1,1 +1,343 @@
-<mark><code>course-catalog.html</code>NOT IMPLEMENTED YET</mark>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Registration - EduConnect</title>
+</head>
+
+<body>
+
+  <header>
+    <h1>EduConnect</h1>
+    <p> Degrees, Certificates, & Free Online Courses</p>
+
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="course-catalog.html">Course Catalog</a></li>
+        <li><a href="course-catalog.html">Course Details</a></li>
+        <li><a href="student-dashboard.html">Student Dashboard</a></li>
+        <li><a href="registration.html">Registration</a></li>
+        <li><a href="contact.html">Contact Me</a></li>
+        <li><a href="https://www.gu.edu.eg/" target="_blank">GU University</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <hr>
+
+  <div id="breadcrumb">
+    <a href="../index.html">Home</a> &gt; Course Catalog
+  </div>
+
+  <hr>
+
+  <main id="catalog-main" aria-labelledby="catalog-title">
+
+    <div style="display:flex; gap:1rem; align-items:flex-start;">
+
+      <aside aria-label="Filter courses" style="flex:0 0 20%;">
+        <form action="#" method="get" aria-labelledby="filters-heading">
+          <h2 id="filters-heading">Filters</h2>
+
+
+          <fieldset>
+            <legend>Category</legend>
+            <label><input type="checkbox" name="category" value="development"> Development</label><br>
+            <label><input type="checkbox" name="category" value="design"> Design</label><br>
+            <label><input type="checkbox" name="category" value="data"> Data Science</label><br>
+            <label><input type="checkbox" name="category" value="business"> Business</label>
+          </fieldset>
+
+          <!-- @mahros -->
+          <!-- NOTE: Change the level value if needed -->
+          <fieldset>
+            <legend>Level</legend>
+            <label><input type="radio" name="level" value="beginner"> Beginner</label><br>
+            <label><input type="radio" name="level" value="intermediate"> Intermediate</label><br>
+            <label><input type="radio" name="level" value="advanced"> Advanced</label>
+          </fieldset>
+
+          <!-- Filter: Duration (select dropdown) -->
+          <label for="duration-select">Duration</label>
+          <select id="duration-select" name="duration">
+            <option value="">Any</option>
+            <option value="short">&lt; 2 hours</option>
+            <option value="medium">2...10 hours</option>
+            <option value="long">&gt; 10 hours</option>
+          </select>
+
+          <!-- Filter: Rating (range input) -->
+          <label for="rating-range">Minimum rating</label>
+          <input id="rating-range" name="rating" type="range" min="0" max="5" step="0.5">
+
+          <div>
+            <button type="submit">Apply Filters</button>
+          </div>
+        </form>
+      </aside>
+
+
+
+      <!-- @mahros -->
+      <!-- Course Catalog section -->
+      <section style="flex:1;">
+        <!-- Search and Sort -->
+        <header>
+          <h1 id="catalog-title">Course Catalog</h1>
+
+          <form role="search" action="#" method="get" aria-label="Search courses">
+            <label for="catalog-search">Search</label>
+            <input id="catalog-search" type="search" name="q" placeholder="Search courses">
+            <button type="submit">Search</button>
+          </form>
+
+          <div>
+            <label for="sort-select">Sort by</label>
+            <select id="sort-select" name="sort">
+              <option value="popularity">Popularity</option>
+              <option value="price">Price</option>
+              <option value="rating">Rating</option>
+              <option value="newest">Newest</option>
+            </select>
+
+            <!-- Results counter -->
+            <p aria-live="polite">Showing <strong id="results-count">6</strong> courses</p>
+          </div>
+        </header>
+
+        <!-- Course grid -->
+        <section aria-label="Available courses">
+          <div role="list" aria-label="Course grid">
+            <!-- Course 1 -->
+            <article role="listitem">
+              <figure>
+                <img src="../images/course1.png" alt="Introduction to JavaScript thumbnail">
+                <figcaption>Intro to JavaScript — thumbnail</figcaption>
+              </figure>
+              <h3>Introduction to JavaScript</h3>
+              <p>Learn core JavaScript concepts and DOM manipulation.</p>
+              <p>Instructor: Alice Martin</p>
+              <dl>
+                <dt>Duration</dt>
+                <dd>6 hours</dd>
+                <dt>Level</dt>
+                <dd>Beginner</dd>
+                <dt>Price</dt>
+                <dd>$29</dd>
+              </dl>
+              <p aria-label="Rating">★★★★☆ (4.0)</p>
+              <ul>
+                <li>Interactive exercises</li>
+                <li>Beginner-friendly</li>
+                <li>Certificate</li>
+              </ul>
+              <p><a href="course-detail.html">View Details</a></p>
+            </article>
+
+            <!-- Course 2 -->
+            <article role="listitem">
+              <figure>
+                <img src="../images/course2.png" alt="Advanced CSS Grid thumbnail">
+                <figcaption>Advanced CSS Grid — thumbnail</figcaption>
+              </figure>
+              <h3>Advanced CSS Grid</h3>
+              <p>Master responsive layout techniques with CSS Grid.</p>
+              <p>Instructor: Ben Carter</p>
+              <dl>
+                <dt>Duration</dt>
+                <dd>8 hours</dd>
+                <dt>Level</dt>
+                <dd>Advanced</dd>
+                <dt>Price</dt>
+                <dd>$49</dd>
+              </dl>
+              <p aria-label="Rating">★★★★☆ (4.2)</p>
+              <ul>
+                <li>Complex layouts</li>
+                <li>Real-world projects</li>
+              </ul>
+              <p><a href="course-detail.html">View Details</a></p>
+            </article>
+
+            <!-- Course 3 -->
+            <article role="listitem">
+              <figure>
+                <img src="../images/course3.png" alt="Data Analysis with Python thumbnail">
+                <figcaption>Data Analysis with Python — thumbnail</figcaption>
+              </figure>
+              <h3>Data Analysis with Python</h3>
+              <p>Fundamentals of data analysis and pandas.</p>
+              <p>Instructor: Carla Ruiz</p>
+              <dl>
+                <dt>Duration</dt>
+                <dd>12 hours</dd>
+                <dt>Level</dt>
+                <dd>Intermediate</dd>
+                <dt>Price</dt>
+                <dd>$79</dd>
+              </dl>
+              <p aria-label="Rating">★★★★★ (5.0)</p>
+              <ul>
+                <li>Pandas & NumPy</li>
+                <li>Data cleaning</li>
+                <li>Visualizations</li>
+              </ul>
+              <p><a href="course-detail.html">View Details</a></p>
+            </article>
+
+            <!-- Course 4 -->
+            <article role="listitem">
+              <figure>
+                <img src="../images/course4.png" alt="UX Fundamentals thumbnail">
+                <figcaption>UX Fundamentals — thumbnail</figcaption>
+              </figure>
+              <h3>UX Fundamentals</h3>
+              <p>Principles of user-centered design and prototyping.</p>
+              <p>Instructor: Daniel Park</p>
+              <dl>
+                <dt>Duration</dt>
+                <dd>4 hours</dd>
+                <dt>Level</dt>
+                <dd>Beginner</dd>
+                <dt>Price</dt>
+                <dd>$25</dd>
+              </dl>
+              <p aria-label="Rating">★★★☆☆ (3.8)</p>
+              <ul>
+                <li>Wireframing</li>
+                <li>User research basics</li>
+              </ul>
+              <p><a href="course-detail.html">View Details</a></p>
+            </article>
+
+            <!-- Course 5 -->
+            <article role="listitem">
+              <figure>
+                <img src="../images/course5.png" alt="Machine Learning Basics thumbnail">
+                <figcaption>Machine Learning Basics — thumbnail</figcaption>
+              </figure>
+              <h3>Machine Learning Basics</h3>
+              <p>Introductory machine learning concepts and workflows.</p>
+              <p>Instructor: Elena Gomez</p>
+              <dl>
+                <dt>Duration</dt>
+                <dd>10 hours</dd>
+                <dt>Level</dt>
+                <dd>Intermediate</dd>
+                <dt>Price</dt>
+                <dd>$99</dd>
+              </dl>
+              <p aria-label="Rating">★★★★☆ (4.5)</p>
+              <ul>
+                <li>Supervised learning</li>
+                <li>Model evaluation</li>
+              </ul>
+              <p><a href="course-detail.html">View Details</a></p>
+            </article>
+
+            <!-- Course 6 -->
+            <article role="listitem">
+              <figure>
+                <img src="../images/course6.png" alt="Product Management Essentials thumbnail">
+                <figcaption>Product Management Essentials — thumbnail</figcaption>
+              </figure>
+              <h3>Product Management Essentials</h3>
+              <p>Key concepts for product managers, roadmaps and metrics.</p>
+              <p>Instructor: Farah Mahmoud</p>
+              <dl>
+                <dt>Duration</dt>
+                <dd>5 hours</dd>
+                <dt>Level</dt>
+                <dd>Beginner</dd>
+                <dt>Price</dt>
+                <dd>$39</dd>
+              </dl>
+              <p aria-label="Rating">★★★★☆ (4.1)</p>
+              <ul>
+                <li>Roadmapping</li>
+                <li>Stakeholder communication</li>
+              </ul>
+              <p><a href="course-detail.html">View Details</a></p>
+            </article>
+          </div>
+        </section>
+
+        <!-- Course comparison table -->
+        <section aria-label="Course comparison">
+          <h2>Course Comparison</h2>
+          <table>
+            <caption>Comparison of selected courses — key attributes and enrollment.</caption>
+            <thead>
+              <tr>
+                <th scope="col">Course Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Duration</th>
+                <th scope="col">Level</th>
+                <th scope="col">Rating</th>
+                <th scope="col">Enrollment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Introduction to JavaScript</td>
+                <td>$29</td>
+                <td>6h</td>
+                <td>Beginner</td>
+                <td>4.0</td>
+                <td>1,240</td>
+              </tr>
+              <tr>
+                <td>Data Analysis with Python</td>
+                <td>$79</td>
+                <td>12h</td>
+                <td>Intermediate</td>
+                <td>5.0</td>
+                <td>3,010</td>
+              </tr>
+              <tr>
+                <td>Machine Learning Basics</td>
+                <td>$99</td>
+                <td>10h</td>
+                <td>Intermediate</td>
+                <td>4.5</td>
+                <td>2,150</td>
+              </tr>
+
+              <!-- Merged row example using colspan for a note -->
+              <tr>
+                <td colspan="6">Note: Prices shown are promotional and subject to change.</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </section>
+    </div>
+  </main>
+
+
+  <hr>
+
+  <footer>
+    <p>
+      Contact us: <a href="mailto:mmm500512@gu.edu.eg">mmm500512@gu.edu.eg</a>
+    </p>
+
+    <p>
+      Follow us:
+      <a href="#">LinkedIn</a>
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+    </p>
+
+    <p><a href="about.html">About Us</a></p>
+
+    <p>&copy; 2025 EduConnect. All rights reserved.</p>
+
+    <p><small>Last updated: October 15, 2025</small></p>
+  </footer>
+
+</body>
+
+</html>
