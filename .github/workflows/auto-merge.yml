@@ -1,0 +1,32 @@
+name: Auto PR and Merge
+
+on:
+  push:
+    branches:
+      - "feature/*"
+
+jobs:
+  create-and-merge-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Automated PR commit"
+          branch: ${{ github.ref_name }}
+          base: main
+          title: "Auto PR from ${{ github.ref_name }}"
+          body: "This PR was automatically created by GitHub Actions."
+
+      - name: Enable auto-merge
+        if: steps.cpr.outputs.pull-request-number
+        uses: peter-evans/enable-pull-request-automerge@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          pull-request-number: ${{ steps.cpr.outputs.pull-request-number }}
+          merge-method: squash

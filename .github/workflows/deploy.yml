@@ -1,0 +1,58 @@
+name: Deploy & Release from GH Pages
+
+on:
+  push:
+    branches:
+      - main # Only trigger on merges to main
+
+permissions:
+  contents: write # Needed to push to gh-pages
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the main branch
+      - name: Checkout main branch
+        uses: actions/checkout@v3
+
+      # Step 2: Deploy all files from src/ to gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./src # Deploy only the src folder
+          publish_branch: gh-pages
+          keep_files: false
+          exclude: |
+            **/*.tmp
+            **/drafts/**
+            README.md
+            deploy.yml
+            .github/**
+
+      # Step 3: Checkout gh-pages branch (to get deployed files)
+      - name: Checkout gh-pages branch
+        uses: actions/checkout@v3
+        with:
+          ref: gh-pages
+          path: gh-pages
+
+      # Step 4: Zip the deployed site
+      - name: Zip deployed GH Pages
+        run: |
+          cd gh-pages
+          zip -r ../EduConnect-gh-pages.zip .
+          cd ..
+
+      # Step 5: Create a GitHub Release with the ZIP attached
+      - name: Create GitHub Release with ZIP
+        uses: ncipollo/release-action@v1
+        with:
+          tag: gh-pages-v${{ github.run_number }}
+          name: "Release v${{ github.run_number }}"
+          files: ./EduConnect-gh-pages.zip
+          draft: false
+          prerelease: false
+          generate_release_notes: true
