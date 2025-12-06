@@ -2,13 +2,12 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Student Dashboard - EduConnect</title>
+  <title>EduConnect - Student Dashboard</title>
 </head>
 
 <body>
 
-    <header>
+  <header>
     <h1>EduConnect</h1>
     <p> Degrees, Certificates, & Free Online Courses</p>
 
@@ -18,13 +17,14 @@
         <li><a href="about.html">About Us</a></li>
         <li><a href="course-catalog.html">Course Catalog</a></li>
         <li><a href="course-catalog.html">Course Details</a></li>
+        <li><a href="student-dashboard.html">Student Dashboard</a></li>
         <li><a href="registration.html">Registration</a></li>
         <li><a href="contact.html">Contact Me</a></li>
         <li><a href="https://www.gu.edu.eg/" target="_blank">GU University</a></li>
       </ul>
     </nav>
   </header>
-  
+
   <hr>
 
   <div id="breadcrumb">
@@ -33,158 +33,212 @@
 
   <hr>
 
-  <main>
-    <section id="personal-header">
-      <h2>Welcome, Karim!</h2>
-      <figure class="profile-photo">
-        <img src="https://ui-avatars.com/api/?name=Karim&size=200&background=6366F1&color=fff&bold=true" alt="Karim Profile">
-        <figcaption>Profile Photo Placeholder</figcaption>
-      </figure>
-      <dl>
-        <dt>Total Courses</dt>
-        <dd>12</dd>
-        <dt>Completed</dt>
-        <dd>5</dd>
-        <dt>In Progress</dt>
-        <dd>3</dd>
-        <dt>Certificates</dt>
-        <dd>4</dd>
-      </dl>
-    </section>
 
+  <!-- @mahros -->
+  <!-- main section -->
+  <main>
+    <!-- Enrolled Courses Section -->
     <section id="enrolled-courses">
       <h2>Enrolled Courses</h2>
       <article>
-        <img src="images/course1.png" alt="Course Thumbnail">
-        <h3>Introduction to JavaScript</h3>
-        <p>Instructor: Alice Martin</p>
-        <p>Progress: 60%</p>
-        <p>Last accessed: <time datetime="2025-12-04T14:00">December 4, 2025</time></p>
-        <p><a href="#">Continue Learning</a></p>
+        <img src="../images/course1.png" alt="Course 1 Thumbnail">
+        <h3>Course 1 Name</h3>
+        <p>Instructor: John Doe</p>
+        <p>Progress: 50%</p>
+        <p>Last Accessed: <time datetime="2025-12-04">December 4, 2025</time></p>
+        <a href="#">Continue Learning</a>
       </article>
       <article>
-        <img src="images/course2.png" alt="Course Thumbnail">
-        <h3>Advanced CSS Grid</h3>
-        <p>Instructor: Ben Carter</p>
-        <p>Progress: 20%</p>
-        <p>Last accessed: <time datetime="2025-12-02T10:00">December 2, 2025</time></p>
-        <p><a href="#">Continue Learning</a></p>
+        <img src="../images/course2.png" alt="Course 2 Thumbnail">
+        <h3>Course 2 Name</h3>
+        <p>Instructor: Jane Smith</p>
+        <p>Progress: 30%</p>
+        <p>Last Accessed: <time datetime="2025-11-30">November 30, 2025</time></p>
+        <a href="#">Continue Learning</a>
       </article>
       <article>
-        <img src="images/course3.png" alt="Course Thumbnail">
-        <h3>Data Analysis with Python</h3>
-        <p>Instructor: Carla Ruiz</p>
+        <img src="../images/course3.png" alt="Course 3 Thumbnail">
+        <h3>Course 3 Name</h3>
+        <p>Instructor: Michael Johnson</p>
         <p>Progress: 80%</p>
-        <p>Last accessed: <time datetime="2025-12-05T16:00">December 5, 2025</time></p>
-        <p><a href="#">Continue Learning</a></p>
+        <p>Last Accessed: <time datetime="2025-12-02">December 2, 2025</time></p>
+        <a href="#">Continue Learning</a>
       </article>
     </section>
 
+    <!-- Progress Statistics Section -->
     <section id="progress-statistics">
       <h2>Progress Statistics</h2>
       <dl>
         <dt>Courses Completed</dt>
-        <dd>5</dd>
-        <dt>Courses In Progress</dt>
-        <dd>3</dd>
-        <dt>Total Learning Hours</dt>
-        <dd>120 hours</dd>
-        <dt>Certificates Earned</dt>
         <dd>4</dd>
-        <dt>Quiz Score</dt>
-        <dd>88%</dd>
+        <dt>Courses In Progress</dt>
+        <dd>5</dd>
+        <dt>Total Learning Hours</dt>
+        <dd>120</dd>
+        <dt>Certificates Earned</dt>
+        <dd>2</dd>
+        <dt>Average Quiz Score</dt>
+        <dd>85%</dd>
         <dt>Current Streak</dt>
         <dd>7 days</dd>
       </dl>
     </section>
 
+    <!-- Upcoming Deadlines Section -->
     <section id="upcoming-deadlines">
       <h2>Upcoming Deadlines</h2>
       <ol>
         <li>
-          Assignment 1 — Intro to JavaScript — Due: <time datetime="2025-12-07">December 7, 2025</time>
+          <strong>Assignment 3:</strong> Course 1 - Due: <time datetime="2025-12-07">December 7, 2025</time> - Priority:
+          High
         </li>
         <li>
-          Quiz 2 — Data Analysis — Due: <time datetime="2025-12-08">December 8, 2025</time>
+          <strong>Quiz 2:</strong> Course 2 - Due: <time datetime="2025-12-10">December 10, 2025</time> - Priority:
+          Medium
         </li>
         <li>
-          Certificate Submission — Machine Learning Basics — Due: <time datetime="2025-12-10">December 10, 2025</time>
+          <strong>Project Submission:</strong> Course 3 - Due: <time datetime="2025-12-12">December 12, 2025</time> -
+          Priority: High
         </li>
       </ol>
     </section>
 
+    <!-- Recent Activity Section -->
     <section id="recent-activity">
       <h2>Recent Activity</h2>
       <article>
-        <h3>Course Started: Data Analysis with Python</h3>
-        <time datetime="2025-12-01T09:00">December 1, 2025, 9:00 AM</time>
+        Started Course 1 - <time datetime="2025-12-01">December 1, 2025</time>
       </article>
       <article>
-        <h3>Assignment Submitted: Intro to JavaScript Assignment 1</h3>
-        <time datetime="2025-12-03T14:00">December 3, 2025, 2:00 PM</time>
+        Submitted Assignment 2 - <time datetime="2025-12-03">December 3, 2025</time>
       </article>
       <article>
-        <h3>Quiz Completed: CSS Grid Basics</h3>
-        <time datetime="2025-12-04T11:00">December 4, 2025, 11:00 AM</time>
+        Completed Quiz 1 - <time datetime="2025-12-04">December 4, 2025</time>
       </article>
       <article>
-        <h3>Certificate Earned: Python Fundamentals</h3>
-        <time datetime="2025-12-05T17:00">December 5, 2025, 5:00 PM</time>
+        Earned Certificate in Course 2 - <time datetime="2025-11-28">November 28, 2025</time>
       </article>
       <article>
-        <h3>Course Started: Machine Learning Basics</h3>
-        <time datetime="2025-12-06T08:00">December 6, 2025, 8:00 AM</time>
+        Submitted Assignment 3 - <time datetime="2025-12-05">December 5, 2025</time>
       </article>
     </section>
-
   </main>
 
+  <!-- Aside Section -->
   <aside>
-    <section id="recommended-courses">
+    <section>
       <h2>Recommended Courses</h2>
       <ul>
-        <li><img src="images/course4.png" alt="UX Fundamentals Thumbnail"> UX Fundamentals</li>
-        <li><img src="images/course5.png" alt="Machine Learning Basics Thumbnail"> Machine Learning Basics</li>
-        <li><img src="images/course6.png" alt="Product Management Thumbnail"> Product Management Essentials</li>
+        <li>Course A</li>
+        <li>Course B</li>
+        <li>Course C</li>
       </ul>
     </section>
 
-    <section id="achievements">
+    <section>
       <h2>Achievements & Badges</h2>
       <ul>
-        <li>Top Performer Badge</li>
-        <li>Course Completion Badge</li>
+        <li>Secured 1% on VJudge</li>
+        <li>Secured 5% on Codeforces</li>
+        <li>Secured 10% on TryhackMe</li>
       </ul>
     </section>
 
-    <section id="learning-goals">
-      <h2>Learning Goals</h2>
+    <section>
+      <h2>Learning Goals Progress</h2>
+      <p>75% of goals completed</p>
+    </section>
+
+    <section>
+      <h2>Calendar</h2>
+      <table>
+        <caption>December 2025</caption>
+        <tr>
+          <th>Su</th>
+          <th>Mo</th>
+          <th>Tu</th>
+          <th>We</th>
+          <th>Th</th>
+          <th>Fr</th>
+          <th>Sa</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td>10</td>
+          <td>11</td>
+          <td>12</td>
+          <td>13</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>15</td>
+          <td>16</td>
+          <td>17</td>
+          <td>18</td>
+          <td>19</td>
+          <td>20</td>
+        </tr>
+        <tr>
+          <td>21</td>
+          <td>22</td>
+          <td>23</td>
+          <td>24</td>
+          <td>25</td>
+          <td>26</td>
+          <td>27</td>
+        </tr>
+        <tr>
+          <td>28</td>
+          <td>29</td>
+          <td>30</td>
+          <td>31</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </section>
+
+    <section>
+      <h2>Quick Links</h2>
       <ul>
-        <li>Complete 3 more courses this month</li>
-        <li>Earn 2 more certificates</li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Certificates</a></li>
       </ul>
     </section>
   </aside>
-
   <hr>
+
   <footer>
-      <p>
-        Contact us: <a href="mailto:kaa400136@gu.edu.eg">kaa400136@gu.edu.eg</a>
-      </p>
+    <p>
+      Contact us: <a href="mailto:mmm500512@gu.edu.eg">mmm500512@gu.edu.eg</a>
+    </p>
 
-      <p>
-        Follow us:
-        <a href="#">LinkedIn</a>
-        <a href="#">Facebook</a>
-        <a href="#">Twitter</a>
-      </p>
+    <p>
+      Follow us:
+      <a href="#">LinkedIn</a>
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+    </p>
 
-      <p><a href="about.html">About Us</a></p>
+    <p><a href="about.html">About Us</a></p>
 
-      <p>&copy; 2025 EduConnect. All rights reserved.</p>
+    <p>&copy; 2025 EduConnect. All rights reserved.</p>
 
-      <p><small>Last updated: October 15, 2025</small></p>
-    </footer>
+    <p><small>Last updated: October 15, 2025</small></p>
+  </footer>
 
 </body>
-</html>
