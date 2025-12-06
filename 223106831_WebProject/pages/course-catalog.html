@@ -2,14 +2,19 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8">
   <title>Registration - EduConnect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
 
+  <!-- ======================= HEADER ======================= -->
   <header>
-    <h1>EduConnect</h1>
-    <p> Degrees, Certificates, & Free Online Courses</p>
+    <div>
+      <h1>EduConnect</h1>
+      <p>Degrees, Certificates, & Free Online Courses</p>
+    </div>
 
     <nav>
       <ul>
@@ -20,81 +25,83 @@
         <li><a href="student-dashboard.html">Student Dashboard</a></li>
         <li><a href="registration.html">Registration</a></li>
         <li><a href="contact.html">Contact Me</a></li>
-        <li><a href="https://www.gu.edu.eg/" target="_blank">GU University</a></li>
+        <li><a href="https://www.gu.edu.eg/" target="_blank" rel="noopener">GU University</a></li>
       </ul>
     </nav>
   </header>
 
   <hr>
 
-  <div id="breadcrumb">
-    <a href="../index.html">Home</a> &gt; Course Catalog
-  </div>
+  <!-- ======================= BREADCRUMB ======================= -->
+  <nav>
+    <ol>
+      <li><a href="../index.html">Home</a></li>
+      <li>Course Catalog</li>
+    </ol>
+  </nav>
 
   <hr>
 
-  <main id="catalog-main" aria-labelledby="catalog-title">
+  <!-- ======================= MAIN CONTENT ======================= -->
+  <main id="catalog-main">
 
     <div style="display:flex; gap:1rem; align-items:flex-start;">
 
-      <aside aria-label="Filter courses" style="flex:0 0 20%;">
-        <form action="#" method="get" aria-labelledby="filters-heading">
+      <!-- ======================= ASIDE - FILTERS ======================= -->
+      <aside>
+        <section>
           <h2 id="filters-heading">Filters</h2>
 
+          <form action="#" method="get">
 
-          <fieldset>
-            <legend>Category</legend>
-            <label><input type="checkbox" name="category" value="development"> Development</label><br>
-            <label><input type="checkbox" name="category" value="design"> Design</label><br>
-            <label><input type="checkbox" name="category" value="data"> Data Science</label><br>
-            <label><input type="checkbox" name="category" value="business"> Business</label>
-          </fieldset>
+            <fieldset>
+              <legend>Category</legend>
+              <label><input type="checkbox" name="category" value="development"> Development</label><br>
+              <label><input type="checkbox" name="category" value="design"> Design</label><br>
+              <label><input type="checkbox" name="category" value="data"> Data Science</label><br>
+              <label><input type="checkbox" name="category" value="business"> Business</label>
+            </fieldset>
 
-          <!-- @mahros -->
-          <!-- NOTE: Change the level value if needed -->
-          <fieldset>
-            <legend>Level</legend>
-            <label><input type="radio" name="level" value="beginner"> Beginner</label><br>
-            <label><input type="radio" name="level" value="intermediate"> Intermediate</label><br>
-            <label><input type="radio" name="level" value="advanced"> Advanced</label>
-          </fieldset>
+            <fieldset>
+              <legend>Level</legend>
+              <label><input type="radio" name="level" value="beginner"> Beginner</label><br>
+              <label><input type="radio" name="level" value="intermediate"> Intermediate</label><br>
+              <label><input type="radio" name="level" value="advanced"> Advanced</label>
+            </fieldset>
 
-          <!-- Filter: Duration (select dropdown) -->
-          <label for="duration-select">Duration</label>
-          <select id="duration-select" name="duration">
-            <option value="">Any</option>
-            <option value="short">&lt; 2 hours</option>
-            <option value="medium">2...10 hours</option>
-            <option value="long">&gt; 10 hours</option>
-          </select>
+            <label for="duration-select">Duration</label>
+            <select id="duration-select" name="duration">
+              <option value="">Any</option>
+              <option value="short">&lt; 2 hours</option>
+              <option value="medium">2...10 hours</option>
+              <option value="long">&gt; 10 hours</option>
+            </select>
 
-          <!-- Filter: Rating (range input) -->
-          <label for="rating-range">Minimum rating</label>
-          <input id="rating-range" name="rating" type="range" min="0" max="5" step="0.5">
+            <label for="rating-range">Minimum rating</label>
+            <input id="rating-range" name="rating" type="range" min="0" max="5" step="0.5">
 
-          <div>
-            <button type="submit">Apply Filters</button>
-          </div>
-        </form>
+            <div>
+              <button type="submit">Apply Filters</button>
+            </div>
+          </form>
+        </section>
       </aside>
 
-
-
-      <!-- @mahros -->
-      <!-- Course Catalog section -->
+      <!-- ======================= COURSE CATALOG ======================= -->
       <section style="flex:1;">
-        <!-- Search and Sort -->
-        <header>
-          <h1 id="catalog-title">Course Catalog</h1>
 
-          <form role="search" action="#" method="get" aria-label="Search courses">
+        <header>
+          <h2 id="catalog-title">Course Catalog</h2>
+
+          <form role="search" action="#" method="get">
             <label for="catalog-search">Search</label>
             <input id="catalog-search" type="search" name="q" placeholder="Search courses">
             <button type="submit">Search</button>
           </form>
 
-          <div>
-            <label for="sort-select">Sort by</label>
+          <section>
+            <h5><label for="sort-select">Sort by</label></h5>
+
             <select id="sort-select" name="sort">
               <option value="popularity">Popularity</option>
               <option value="price">Price</option>
@@ -102,171 +109,192 @@
               <option value="newest">Newest</option>
             </select>
 
-            <!-- Results counter -->
             <p aria-live="polite">Showing <strong id="results-count">6</strong> courses</p>
-          </div>
+          </section>
         </header>
 
-        <!-- Course grid -->
-        <section aria-label="Available courses">
-          <div role="list" aria-label="Course grid">
-            <!-- Course 1 -->
-            <article role="listitem">
-              <figure>
-                <img src="../images/course1.png" alt="Introduction to JavaScript thumbnail">
-                <figcaption>Intro to JavaScript — thumbnail</figcaption>
-              </figure>
-              <h3>Introduction to JavaScript</h3>
-              <p>Learn core JavaScript concepts and DOM manipulation.</p>
-              <p>Instructor: Alice Martin</p>
-              <dl>
-                <dt>Duration</dt>
-                <dd>6 hours</dd>
-                <dt>Level</dt>
-                <dd>Beginner</dd>
-                <dt>Price</dt>
-                <dd>$29</dd>
-              </dl>
-              <p aria-label="Rating">★★★★☆ (4.0)</p>
-              <ul>
-                <li>Interactive exercises</li>
-                <li>Beginner-friendly</li>
-                <li>Certificate</li>
-              </ul>
-              <p><a href="course-detail.html">View Details</a></p>
-            </article>
+        <!-- ======================= COURSE GRID ======================= -->
+        <section>
+          <h2>Courses</h2>
 
-            <!-- Course 2 -->
-            <article role="listitem">
-              <figure>
-                <img src="../images/course2.png" alt="Advanced CSS Grid thumbnail">
-                <figcaption>Advanced CSS Grid — thumbnail</figcaption>
-              </figure>
-              <h3>Advanced CSS Grid</h3>
-              <p>Master responsive layout techniques with CSS Grid.</p>
-              <p>Instructor: Ben Carter</p>
-              <dl>
-                <dt>Duration</dt>
-                <dd>8 hours</dd>
-                <dt>Level</dt>
-                <dd>Advanced</dd>
-                <dt>Price</dt>
-                <dd>$49</dd>
-              </dl>
-              <p aria-label="Rating">★★★★☆ (4.2)</p>
-              <ul>
-                <li>Complex layouts</li>
-                <li>Real-world projects</li>
-              </ul>
-              <p><a href="course-detail.html">View Details</a></p>
-            </article>
+          <!-- ======================= COURSE TEMPLATE ======================= -->
+          <article>
+            <figure>
+              <img src="../images/course1.png" alt="Introduction to JavaScript thumbnail">
+              <figcaption>Intro to JavaScript — thumbnail</figcaption>
+            </figure>
+            <h3>Introduction to JavaScript</h3>
+            <p>Learn core JavaScript concepts and DOM manipulation.</p>
+            <p>Instructor: Alice Martin</p>
 
-            <!-- Course 3 -->
-            <article role="listitem">
-              <figure>
-                <img src="../images/course3.png" alt="Data Analysis with Python thumbnail">
-                <figcaption>Data Analysis with Python — thumbnail</figcaption>
-              </figure>
-              <h3>Data Analysis with Python</h3>
-              <p>Fundamentals of data analysis and pandas.</p>
-              <p>Instructor: Carla Ruiz</p>
-              <dl>
-                <dt>Duration</dt>
-                <dd>12 hours</dd>
-                <dt>Level</dt>
-                <dd>Intermediate</dd>
-                <dt>Price</dt>
-                <dd>$79</dd>
-              </dl>
-              <p aria-label="Rating">★★★★★ (5.0)</p>
-              <ul>
-                <li>Pandas & NumPy</li>
-                <li>Data cleaning</li>
-                <li>Visualizations</li>
-              </ul>
-              <p><a href="course-detail.html">View Details</a></p>
-            </article>
+            <dl>
+              <dt>Duration</dt>
+              <dd>6 hours</dd>
+              <dt>Level</dt>
+              <dd>Beginner</dd>
+              <dt>Price</dt>
+              <dd>$29</dd>
+            </dl>
 
-            <!-- Course 4 -->
-            <article role="listitem">
-              <figure>
-                <img src="../images/course4.png" alt="UX Fundamentals thumbnail">
-                <figcaption>UX Fundamentals — thumbnail</figcaption>
-              </figure>
-              <h3>UX Fundamentals</h3>
-              <p>Principles of user-centered design and prototyping.</p>
-              <p>Instructor: Daniel Park</p>
-              <dl>
-                <dt>Duration</dt>
-                <dd>4 hours</dd>
-                <dt>Level</dt>
-                <dd>Beginner</dd>
-                <dt>Price</dt>
-                <dd>$25</dd>
-              </dl>
-              <p aria-label="Rating">★★★☆☆ (3.8)</p>
-              <ul>
-                <li>Wireframing</li>
-                <li>User research basics</li>
-              </ul>
-              <p><a href="course-detail.html">View Details</a></p>
-            </article>
+            <p>★★★★☆ (4.0)</p>
 
-            <!-- Course 5 -->
-            <article role="listitem">
-              <figure>
-                <img src="../images/course5.png" alt="Machine Learning Basics thumbnail">
-                <figcaption>Machine Learning Basics — thumbnail</figcaption>
-              </figure>
-              <h3>Machine Learning Basics</h3>
-              <p>Introductory machine learning concepts and workflows.</p>
-              <p>Instructor: Elena Gomez</p>
-              <dl>
-                <dt>Duration</dt>
-                <dd>10 hours</dd>
-                <dt>Level</dt>
-                <dd>Intermediate</dd>
-                <dt>Price</dt>
-                <dd>$99</dd>
-              </dl>
-              <p aria-label="Rating">★★★★☆ (4.5)</p>
-              <ul>
-                <li>Supervised learning</li>
-                <li>Model evaluation</li>
-              </ul>
-              <p><a href="course-detail.html">View Details</a></p>
-            </article>
+            <ul>
+              <li>Interactive exercises</li>
+              <li>Beginner-friendly</li>
+              <li>Certificate</li>
+            </ul>
 
-            <!-- Course 6 -->
-            <article role="listitem">
-              <figure>
-                <img src="../images/course6.png" alt="Product Management Essentials thumbnail">
-                <figcaption>Product Management Essentials — thumbnail</figcaption>
-              </figure>
-              <h3>Product Management Essentials</h3>
-              <p>Key concepts for product managers, roadmaps and metrics.</p>
-              <p>Instructor: Farah Mahmoud</p>
-              <dl>
-                <dt>Duration</dt>
-                <dd>5 hours</dd>
-                <dt>Level</dt>
-                <dd>Beginner</dd>
-                <dt>Price</dt>
-                <dd>$39</dd>
-              </dl>
-              <p aria-label="Rating">★★★★☆ (4.1)</p>
-              <ul>
-                <li>Roadmapping</li>
-                <li>Stakeholder communication</li>
-              </ul>
-              <p><a href="course-detail.html">View Details</a></p>
-            </article>
-          </div>
+            <p><a href="course-detail.html">View Details</a></p>
+          </article>
+
+          <article>
+            <figure>
+              <img src="../images/course2.png" alt="Advanced CSS Grid thumbnail">
+              <figcaption>Advanced CSS Grid — thumbnail</figcaption>
+            </figure>
+            <h3>Advanced CSS Grid</h3>
+            <p>Master responsive layout techniques with CSS Grid.</p>
+            <p>Instructor: Ben Carter</p>
+
+            <dl>
+              <dt>Duration</dt>
+              <dd>8 hours</dd>
+              <dt>Level</dt>
+              <dd>Advanced</dd>
+              <dt>Price</dt>
+              <dd>$49</dd>
+            </dl>
+
+            <p>★★★★☆ (4.2)</p>
+
+            <ul>
+              <li>Complex layouts</li>
+              <li>Real-world projects</li>
+            </ul>
+
+            <p><a href="course-detail.html">View Details</a></p>
+          </article>
+
+          <article>
+            <figure>
+              <img src="../images/course3.png" alt="Data Analysis with Python thumbnail">
+              <figcaption>Data Analysis with Python — thumbnail</figcaption>
+            </figure>
+            <h3>Data Analysis with Python</h3>
+            <p>Fundamentals of data analysis and pandas.</p>
+            <p>Instructor: Carla Ruiz</p>
+
+            <dl>
+              <dt>Duration</dt>
+              <dd>12 hours</dd>
+              <dt>Level</dt>
+              <dd>Intermediate</dd>
+              <dt>Price</dt>
+              <dd>$79</dd>
+            </dl>
+
+            <p>★★★★★ (5.0)</p>
+
+            <ul>
+              <li>Pandas & NumPy</li>
+              <li>Data cleaning</li>
+              <li>Visualizations</li>
+            </ul>
+
+            <p><a href="course-detail.html">View Details</a></p>
+          </article>
+
+          <article>
+            <figure>
+              <img src="../images/course4.png" alt="UX Fundamentals thumbnail">
+              <figcaption>UX Fundamentals — thumbnail</figcaption>
+            </figure>
+            <h3>UX Fundamentals</h3>
+            <p>Principles of user-centered design and prototyping.</p>
+            <p>Instructor: Daniel Park</p>
+
+            <dl>
+              <dt>Duration</dt>
+              <dd>4 hours</dd>
+              <dt>Level</dt>
+              <dd>Beginner</dd>
+              <dt>Price</dt>
+              <dd>$25</dd>
+            </dl>
+
+            <p>★★★☆☆ (3.8)</p>
+
+            <ul>
+              <li>Wireframing</li>
+              <li>User research basics</li>
+            </ul>
+
+            <p><a href="course-detail.html">View Details</a></p>
+          </article>
+
+          <article>
+            <figure>
+              <img src="../images/course5.png" alt="Machine Learning Basics thumbnail">
+              <figcaption>Machine Learning Basics — thumbnail</figcaption>
+            </figure>
+            <h3>Machine Learning Basics</h3>
+            <p>Introductory machine learning concepts and workflows.</p>
+            <p>Instructor: Elena Gomez</p>
+
+            <dl>
+              <dt>Duration</dt>
+              <dd>10 hours</dd>
+              <dt>Level</dt>
+              <dd>Intermediate</dd>
+              <dt>Price</dt>
+              <dd>$99</dd>
+            </dl>
+
+            <p>★★★★☆ (4.5)</p>
+
+            <ul>
+              <li>Supervised learning</li>
+              <li>Model evaluation</li>
+            </ul>
+
+            <p><a href="course-detail.html">View Details</a></p>
+          </article>
+
+          <article>
+            <figure>
+              <img src="../images/course6.png" alt="Product Management Essentials thumbnail">
+              <figcaption>Product Management Essentials — thumbnail</figcaption>
+            </figure>
+            <h3>Product Management Essentials</h3>
+            <p>Key concepts for product managers, roadmaps and metrics.</p>
+            <p>Instructor: Farah Mahmoud</p>
+
+            <dl>
+              <dt>Duration</dt>
+              <dd>5 hours</dd>
+              <dt>Level</dt>
+              <dd>Beginner</dd>
+              <dt>Price</dt>
+              <dd>$39</dd>
+            </dl>
+
+            <p>★★★★☆ (4.1)</p>
+
+            <ul>
+              <li>Roadmapping</li>
+              <li>Stakeholder communication</li>
+            </ul>
+
+            <p><a href="course-detail.html">View Details</a></p>
+          </article>
+
+
         </section>
 
-        <!-- Course comparison table -->
-        <section aria-label="Course comparison">
+        <!-- ======================= COMPARISON TABLE ======================= -->
+        <section>
           <h2>Course Comparison</h2>
+
           <table>
             <caption>Comparison of selected courses — key attributes and enrollment.</caption>
             <thead>
@@ -279,6 +307,7 @@
                 <th scope="col">Enrollment</th>
               </tr>
             </thead>
+
             <tbody>
               <tr>
                 <td>Introduction to JavaScript</td>
@@ -304,32 +333,34 @@
                 <td>4.5</td>
                 <td>2,150</td>
               </tr>
-
-              <!-- Merged row example using colspan for a note -->
               <tr>
                 <td colspan="6">Note: Prices shown are promotional and subject to change.</td>
               </tr>
             </tbody>
           </table>
+
         </section>
+
       </section>
     </div>
   </main>
 
-
   <hr>
 
+  <!-- ======================= FOOTER ======================= -->
   <footer>
-    <p>
+    <address>
       Contact us: <a href="mailto:mmm500512@gu.edu.eg">mmm500512@gu.edu.eg</a>
-    </p>
+    </address>
 
-    <p>
-      Follow us:
-      <a href="#">LinkedIn</a>
-      <a href="#">Facebook</a>
-      <a href="#">Twitter</a>
-    </p>
+    <section>
+      <h5>Follow us:</h5>
+      <ul>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+      </ul>
+    </section>
 
     <p><a href="about.html">About Us</a></p>
 
